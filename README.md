@@ -1,3 +1,4 @@
+
 ## Overview:
 This is a library for **NKK LCD 64x32 SmartDisplay** (https://www.nkkswitches.com/smartdisplay/) 
 It has been designed and tested for NKK IS15EBFP4RGB-09YN LCD 64 x 32 Pushbutton and shall work with these models as well:
@@ -12,21 +13,22 @@ It has been designed and tested for NKK IS15EBFP4RGB-09YN LCD 64 x 32 Pushbutton
 With minimal changes in configuration settings it shall suppot other LCD resolutions if required.  
     
 The library supports: 
-  1. Two image formats:
-    -Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
-    -Native NKK  (first pixel is top right corner, represented by bit7 in the first byte, as per NKK specs)
-  2. Landscape (64x32) and Portrait (32x64) display configurations 	 
-  3. Two formats for background colour - three bytes RGB format and native NKK format (RRGGBBxx)
-  4. A rotation of an image by 180 degrees to accommodate different possible footprints of an NKK device on your pcb.	
+ 1.Two image formats:    
+ - Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
+ - Native NKK  (first pixel is top right corner, represented by bit7 in the first byte, as per NKK specs)
+ - Landscape (64x32) and Portrait (32x64) display configurations 	 
+ - Two formats for background colour - three bytes RGB format and native NKK format (RRGGBBxx)
+ - A rotation of an image by 180 degrees to accommodate different possible footprints of an NKK device on your pcb.	
 	
 ## Library usage:
 1. Create a NKK_SmartDisplayLCD object.  At this step specify: 
-    w: The NKK LCD screen width in pixels.  Maximum w is  256 and  Maximum w*h/8  = 65535 for this library code. 
-	h: The NKK LCD screen height in pixels  Maximum h is  256 and  Maximum w*h/8  = 65535 for this library code.  
-    isRotate180:  A flag to indicate that the picture need to be rotated by 180 degrees to accommodate different possible footprints of an NKK device on your pcb. Applied just before the picture is uploaded to the NKK device by the *display()* or *display_NKK()* functions.   
-    cspin: Slave Select(Chip Select) signal  (to allow use more than one NKK device with their own SS signals).
-	freqSPI: SPI frequency, Hz. 
-	pointer: A reference (pointer) to native SPI object which handles SPI communications. 
+  
+ - w: The NKK LCD screen width in pixels.  Maximum w is  256 and  Maximum w x h/8  = 65535 for this library code. 
+ - h: The NKK LCD screen height in pixels  Maximum h is  256 and  Maximum w x h/8  = 65535 for this library code.  
+ - isRotate180:  A flag to indicate that the picture need to be rotated by 180 degrees to accommodate different possible footprints of an NKK device on your pcb. Applied just before the picture is uploaded to the NKK device by the *display()* or *display_NKK()* functions. 
+ - cspin: Slave Select(Chip Select) signal  (to allow use more than one NKK device with their own SS signals).
+ - freqSPI: SPI frequency, Hz. 
+ - pointer: A reference (pointer) to native SPI object which handles SPI communications. 
 
 2. Execute *begin()* method. That would start SPI interface and reset the NKK device.
  
@@ -47,8 +49,8 @@ The library supports:
   
 6. Execute *display()* or *display_NKK()* methods which will do the following:  
      - upload an image to the NKK device from *imageBufferGFX[]* or *imageBufferNKK[]* and make the image visible.  
-	    *display()* will use *imageBufferGFX[]* as a source and will overwrite *imageBufferNKK[]*.  
-        *display_NKK()* use *imageBufferNKK[]* as a source and does NOT change *imageBufferGFX[]*.  
+        *display()* will use *imageBufferGFX[]* as a source and will overwrite *imageBufferNKK[]*.  
+         *display_NKK()* use *imageBufferNKK[]* as a source and does NOT change *imageBufferGFX[]*.  
 	AND	
 	 - set NKK device background colour and brightness as per library's variables *bkgColour* and *bkgBrightnes*.
    
@@ -70,8 +72,8 @@ a separate SPI handler such as https://github.com/adafruit/Adafruit_BusIO
 
 
 ## Repository Contents:
-    */documentation* - Image Builder (MS Excel file), NKK LCD 64x32 SmartDisplay application notes 
-    */examples* - examples on how the libraries can be used 
+    /documentation - Image Builder (MS Excel file), NKK LCD 64x32 SmartDisplay application notes 
+    /examples - examples on how the libraries can be used 
 
    
 ## License:
@@ -109,4 +111,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 See the GNU General Public License for more details.
 
+## Donation
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=ifhone777-hub%40yahoo.com&currency_code=AUD)
