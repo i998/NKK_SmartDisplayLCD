@@ -15,34 +15,38 @@ With minimal changes in configuration settings it shall support other LCD resolu
     
 The library supports: 
  1. Two image formats:    
-  --   Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
- -- Native NKK  (first pixel is top right corner, represented by bit7 in the first byte, as per NKK specs)
+     - Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
+    - Native NKK  (first pixel is top right corner, represented by bit7 in the first byte, as per NKK specs)
 2. Landscape (64x32) and Portrait (32x64) display configurations 	 
 3. Two formats for background colour - three bytes RGB format and native NKK format (RRGGBBxx)
 4. A rotation of an image by 180 degrees to accommodate different possible footprints of an NKK device on your pcb.	
 	
 ## Library usage:
  1. Create a NKK_SmartDisplayLCD object.  At this step specify: 
- - w: The NKK LCD screen width in pixels.  Maximum w is  256 and  Maximum w x h/8  = 65535 for this library code. 
- - h: The NKK LCD screen height in pixels  Maximum h is  256 and  Maximum w x h/8  = 65535 for this library code.  
- - isRotate180:  A flag to indicate that the picture need to be rotated by 180 degrees to accommodate different possible footprints of an NKK device on your pcb. Applied just before the picture is uploaded to the NKK device by the *display()* or *display_NKK()* functions. 
- - cspin: Slave Select(Chip Select) signal  (to allow use more than one NKK device with their own SS signals).
- - freqSPI: SPI frequency, Hz. 
- - pointer: A reference (pointer) to native SPI object which handles SPI communications. 
+    - w: The NKK LCD screen width in pixels.  Maximum w is  256 and  Maximum w x h/8  = 65535 for this library code. 
+    - h: The NKK LCD screen height in pixels  Maximum h is  256 and  Maximum w x h/8  = 65535 for this library code.  
+    - isRotate180:  A flag to indicate that the picture need to be rotated by 180 degrees to accommodate different possible footprints of an NKK device on your pcb. Applied just before the picture is uploaded to the NKK device by the *display()* or *display_NKK()* functions. 
+    - cspin: Slave Select(Chip Select) signal  (to allow use more than one NKK device with their own SS signals).
+    - freqSPI: SPI frequency, Hz. 
+    - pointer: A reference (pointer) to native SPI object which handles SPI communications. 
+ 
  2. Execute *begin()* method. That would start SPI interface and reset the NKK device.
+
  3. Set required background colour and brightness:    
- - By using library methods that would communicate directly to the NKK device:
+    - By using library methods that would communicate directly to the NKK device:
         ```C++
        setColourNKK(byte data);  // set as per NKK specs (RRGGBBxx)
        setColourRGB(byte R, byte G, byte B);  // RGB get converted to the closest colour as per NKK specs (64 colours available)
        setBrightness(byte data); //set as per NKK specs  (BBBxxxxx)
        ```	   
- - By setting library variables *bkgColour* and *bkgBrightnes*  which will be used when the *display()* and *display_NKK()* methods are called 	 
+    - By setting library variables *bkgColour* and *bkgBrightnes*  which will be used when the *display()* and *display_NKK()* methods are called 	 
 
  4. Set an image in a GFX or NKK format to library variables *imageBufferGFX[]* and *imageBufferNKK[]*.  No need to set both.
   You can use an  NKK Bitmap bilder (MS Excel file) in the */documentation* folder to build an image in GFX or NKK formats, landscape or portrait.
+ 
  5. Use *drawPixel(x,y,color)* to set a pixel in the *imageBufferGFX[]*.   X and Y are pixel coordunates, starting from 0. For this monochrome 
   LCD display *color* can be any value, it will be converted either 0 or 1 in the library. This method is also used for integration with Adafruit_GFX library (https://github.com/adafruit/Adafruit-GFX-Library).
+  
   6. Execute *display()* or *display_NKK()* methods which will do the following:  
      - upload an image to the NKK device from *imageBufferGFX[]* or *imageBufferNKK[]* and make the image visible.  
         *display()* will use *imageBufferGFX[]* as a source and will overwrite *imageBufferNKK[]*.  
