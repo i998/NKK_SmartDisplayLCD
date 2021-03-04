@@ -69,11 +69,12 @@ See the examples and descriptions of the library functions provided in the code 
 ## Known Limitations:
 Requires a native SPI object (like Arduino one) which handles SPI communications. With a mimimal changes to the library (an update to the class constructor) it can use a separate SPI handler such as https://github.com/adafruit/Adafruit_BusIO
 
-## Hardware:
-Tested with
-    - Arduino Pro Mini 
-	- Maple Mini board (STM32F103CBT6) and Arduino STM32 core (https://github.com/rogerclarkmelbourne/Arduino_STM32)  
 
+## Hardware:
+Successfully tested with:
+   - Arduino Pro Mini
+   - Maple Mini board (STM32F103CBT6) and Arduino STM32 core (https://github.com/rogerclarkmelbourne/Arduino_STM32)  	
+	
 ## Repository Contents:
     /documentation - Image Builder (MS Excel file), NKK LCD 64x32 SmartDisplay application notes 
     /examples - examples on how the libraries can be used 
