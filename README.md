@@ -9,13 +9,14 @@ It has been designed and tested for NKK IS15EBFP4RGB-09YN LCD 64 x 32 Pushbutton
     IS01DBFRGB
     IS15EBFP4RGB
     IS15ESBFP4RGB
+	IS15EBFP4RGB-09YN
     IS01EBFRGB
 
 With minimal changes in configuration settings it shall support other LCD resolutions if required.  
     
 The library supports: 
  1. Two image formats:    
-     - Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
+    - Normal GFX  (first pixel is top left corner, represented by bit0 in the first byte)
     - Native NKK  (first pixel is top right corner, represented by bit7 in the first byte, as per NKK specs)
 2. Landscape (64x32) and Portrait (32x64) display configurations 	 
 3. Two formats for background colour - three bytes RGB format and native NKK format (RRGGBBxx)
@@ -56,7 +57,7 @@ The library supports:
    
    *display()* method is also used for integration with Adafruit_GFX library.	 
 	 
- 7. Use other NKK_SmartDisplayLCD library methods like *clearImageBufferGFX()*, *invertImageBufferGFX()* etc to manage content of the image bugger you use.
+ 7. Use other NKK_SmartDisplayLCD library methods like *clearImageBufferGFX()*, *invertImageBufferGFX()* etc to manage content of the image buffer you use.
 
  8. Use Adafruit_GFX_Ext object to access to Adafruit_GFX library methods like *setCursor()*, *print()*, *drawPixel()*, *fillRect()* etc to build 
    or adjust your image in the *imageBufferGFX[]* image buffer.  Do not forget to call *display()* method to transfer your image to the NKK device 
@@ -66,8 +67,12 @@ See the examples and descriptions of the library functions provided in the code 
   
       
 ## Known Limitations:
-Requres a native SPI object (like Arduino one) which handles SPI communications. With a mimimal changes to the library (an update to the class constructor) it can use a separate SPI handler such as https://github.com/adafruit/Adafruit_BusIO
+Requires a native SPI object (like Arduino one) which handles SPI communications. With a mimimal changes to the library (an update to the class constructor) it can use a separate SPI handler such as https://github.com/adafruit/Adafruit_BusIO
 
+## Hardware:
+Tested with
+    - Arduino Pro Mini 
+	- Maple Mini board (STM32F103CBT6) and Arduino STM32 core (https://github.com/rogerclarkmelbourne/Arduino_STM32)  
 
 ## Repository Contents:
     /documentation - Image Builder (MS Excel file), NKK LCD 64x32 SmartDisplay application notes 
@@ -109,7 +114,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 See the GNU General Public License for more details.
 
-## Donation
+## Donation:
 If this project help you reduce your time to develop, you can give me a cup of coffee :) 
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=ifhone777-hub%40yahoo.com&currency_code=AUD)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=ifhone777-hub%40yahoo.com&currency_code=USD)

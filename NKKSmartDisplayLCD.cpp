@@ -9,8 +9,8 @@ GNU General Public License,  check license.txt for more information
 All text above must be included in any redistribution
 *********************************************************************/
 /*********************************************************************
-2021-02-25
-Version: v01 , initial version
+2021-03-04
+Version: v01.0.1 , tested with STM32
 Status: Works OK 
 
 Key Features:
@@ -28,7 +28,8 @@ Key Features:
 - Can be used with Adafruit GFX Graphics core which does all the circles, text and fonts, 
   rectangles, etc. You can get it from https://github.com/adafruit/Adafruit-GFX-Library. 
   See /examples folder for implementation examples. 
-- Tested with hardware SPI for Arduino Pro Mini board   
+- Tested with hardware SPI for Arduino Pro Mini board
+- Tested with Maple Mini board and Arduino STM32 core (https://github.com/rogerclarkmelbourne/Arduino_STM32)    
 - Tested with NKK IS15EBFP4RGB-09YN LCD 64 x 32 Pushbutton, shall work with these models as well:
     S15DBFP4RGB
     IS15DBFP4RGB-09YN
