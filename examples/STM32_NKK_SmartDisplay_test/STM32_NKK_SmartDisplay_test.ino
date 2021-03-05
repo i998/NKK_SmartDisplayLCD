@@ -22,7 +22,7 @@ NKK Smart Display LCD 64*32 test code using library  NKK_SmartDisplayLCD
     // Maple Mini SS   (NCS)  <-->  PB12 D31 pin no 31 -> NKK SS  (Signal is managed by NKK library to allow running several NKK devices with their own SS pins)
     // Maple Mini SCK  (CLK)  <-->  PB13 D30 pin no 30 -> NKK SCK (Clock for serial communication, maximum 8 MHZ)
     // Maple Mini MISO (SPI)  <-->  PB14 D29 pin no 29 -> NKK SDO (This is not required for NKK devices - no data output back from the NKK device) 
-    // Maple Mini MOSI (SDO)  <-->  PB15 D28 pin no 15 -> NKK SDI 
+    // Maple Mini MOSI (SDO)  <-->  PB15 D28 pin no 28 -> NKK SDI 
     
     //Please note that STM32F103CBT6 is 3.3v and NKK LCD 64x32 SmartDisplay is 5v.  While direct connection without a level shifter works with that example,
     //such hardware setup is at your own risk.   
@@ -57,7 +57,7 @@ SPIClass SPI_2(2); //Create an instance of the SPI Class called SPI_2 that uses 
 	  //Landscape
 	NKK_SmartDisplayLCD NKK = NKK_SmartDisplayLCD(64,32,0,SPIDEVICE_CS,1000000,&SPI_2); 
 	  //Portrait,with 180 rotation
-    //NKK_SmartDisplayLCD NKK = NKK_SmartDisplayLCD(32,64,1,SPIDEVICE_CS,1000000);
+    //NKK_SmartDisplayLCD NKK = NKK_SmartDisplayLCD(32,64,1,SPIDEVICE_CS,1000000,&SPI_2);
 
 
     

@@ -116,6 +116,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 See the GNU General Public License for more details.
 
 ## Donation:
-If this project help you reduce your time to develop, you can give me a cup of coffee :) 
+If you like this project or it helps you to reduce your development effort, you can buy me a cup of coffee :) 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=ifhone777-hub%40yahoo.com&currency_code=USD)
