@@ -11,7 +11,7 @@ All text above must be included in any redistribution
 NKK Smart Display LCD 64*32 test code using library  NKK_SmartDisplayLCD 
     
  example 02- NKK as a library,
- using Maple Mini hardware (http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/0.0.12/hardware/maple-mini.html) 
+ using Maple Mini hardware (https://stm32duinoforum.com/forum/wiki_subdomain/index_title_Maple_Mini.html) 
  and Arduino STM32 core (https://github.com/rogerclarkmelbourne/Arduino_STM32) 
 
  Status: works ok
